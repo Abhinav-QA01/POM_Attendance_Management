@@ -35,6 +35,7 @@ class Login_Page(LoginPage,):
             if window != main_window:
                 self.driver.switch_to.window(window)
                 break
+        time.sleep(1)
         email_button = self.driver.find_element(*self.email)
         email_button.send_keys(username)
         time.sleep(3)
@@ -49,6 +50,16 @@ class Login_Page(LoginPage,):
         time.sleep(3)
         show_Password_button.click()
         password_next_button.click()
+
+        try:
+            config_error = WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(
+                (By.ID, "error-code"))
+            ).text
+            print("Provided email is invalid")
+        except:
+            print("Logged in successfully")
+
         self.driver.switch_to.window(main_window)  # Switch back to the main window
 
         text_field = WebDriverWait(self.driver, 20).until(
