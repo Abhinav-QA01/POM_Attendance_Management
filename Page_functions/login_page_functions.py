@@ -3,8 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from Page_Object.login_page import LoginPage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-class Login_Page(LoginPage,):
+class Login_Page(LoginPage):
 
     def language_selection(self, language_selected):
         if language_selected == 0:
@@ -48,7 +47,7 @@ class Login_Page(LoginPage,):
         password_next_button = self.driver.find_element(*self.next_password)
         show_Password_button = self.driver.find_element(*self.show_password)
         time.sleep(3)
-        show_Password_button.click()
+        # show_Password_button.click()
         password_next_button.click()
 
         try:
@@ -69,4 +68,5 @@ class Login_Page(LoginPage,):
         time.sleep(3)
 
         print(text_field)
+
 
