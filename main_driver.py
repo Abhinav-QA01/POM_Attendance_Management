@@ -14,7 +14,7 @@ driver.maximize_window()
 time.sleep(4)
 
 login_page_functions = Login_Page(driver)
-group_2025_2026_function = Group_2025_2026_Function(driver)
+group_2025_2026_function = Group_2025_2026_Function(driver, x = None, y = None)
 
 def test_login_process():
     login_process = Login_Process(login_page_functions)

@@ -61,12 +61,11 @@ class Login_Page(LoginPage):
 
         self.driver.switch_to.window(main_window)  # Switch back to the main window
 
-        text_field = WebDriverWait(self.driver, 20).until(
+        text_field = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(
-                (By.XPATH, "//p[@class='MuiTypography-root MuiTypography-body1 heading mui-9l3uo3']"))
+                (By.CSS_SELECTOR, '[data-test-id="text-dashboard-heading"]'))
         ).text
         time.sleep(3)
-
         print(text_field)
 
 
