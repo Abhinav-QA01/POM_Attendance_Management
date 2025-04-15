@@ -20,6 +20,6 @@ def test_login_process():
     login_process = Login_Process(login_page_functions)
     login_process.run_process(user_details.username, user_details.password, user_details.language_selected)
 
-def test_Group_of_2025_2026_process():
+def test_group_of_2025_2026_process():
     group_navigation_2025_2026_process = Group_Navigation_Process(group_2025_2026_function)
     group_navigation_2025_2026_process.run_group_process()
