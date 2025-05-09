@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
-from Import_libraries import Import_libraries
+from Import_libraries import DriverManager
 class Group_2025_2026:
     def __init__(self, driver,x,y):
-        self.driver=Import_libraries.driver
+        self.driver=DriverManager.get_driver()
         self.groups_2025_2026 = By.CSS_SELECTOR, '[data-test-id="btn-open-parent-academic-period-Groups of 2025-2026"]'
         self.sem_2 = By.CSS_SELECTOR, '[data-test-id="btn-open-academic-period-Sem 2"]'
         self.sem_1 = By.CSS_SELECTOR, '[data-test-id="btn-open-academic-period-Sem 1"]'
